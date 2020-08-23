@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+  labels:
+    component: web
+spec:
+  containers:
+  - name: client
+    # our multi container uploaded file on docker hub
+    # image: stephengrider/multi-client
+    image: meyash/multiple_workflow_client
+    ports:
+    - containerPort: 3000
+    # these commands are req to make container keep on running
+    # this solves error of stopping of container when process is completed
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
