@@ -26,6 +26,18 @@
   - best for dev and prod purposes
 - services
   - help us to connect to different pods inside a deployment
+- updation
+  - to update image add/tag version number to image while building
+    ```
+    > docker build -t meyash/multi_workflow_client:v2 .
+    > docker push meyash/multi_workflow_client:v2
+    ```
+  - use an imperitive method to then update your pods
+    ```
+    > kubectl set image <obj_type> / <obj_name> <container_name> = <new_image_to_use>
+    
+    > kubectl set image deployment/client-deployment client=meyash/multi_workflow_client:v2
+    ```
 
 ## Phases
 
