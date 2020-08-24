@@ -39,6 +39,19 @@
     > kubectl set image deployment/client-deployment client=meyash/multi_workflow_client:v2
     ```
 
+- multiple dockers
+  - kubernetes also runs a docker inside our pods/developments
+  - so we have one local docker and one inside vm
+    - connect to docker in vm
+      ```
+      > eval $(minikube docker-env)
+      <!-- to get our env vars -->
+      > minikube docker-env
+      <!-- now you can get containers running in kubernetes -->
+      > docker ps
+      ```
+    - in new terminal local will run only
+
 ## Phases
 
 - dev : minikube
